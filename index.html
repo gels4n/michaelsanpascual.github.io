@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Michael Angelo San Pascual — Portfolio</title>
+<title>Michael Angelo San Pascual — Portfolio V1.1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -40,49 +40,23 @@
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
-  body {
-    font-family: 'DM Mono', monospace;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-    transition: background .4s var(--ease), color .4s var(--ease);
-  }
+  body { font-family: 'DM Mono', monospace; background: var(--bg); color: var(--text); overflow-x: hidden; transition: background .4s var(--ease), color .4s var(--ease); }
   img { display: block; max-width: 100%; }
   a { color: inherit; text-decoration: none; }
   ul { list-style: none; }
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    opacity: .5;
-  }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; opacity: .5; }
   h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--heading); line-height: 1.1; }
   .label { font-family: 'Syne', sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--amber); }
   .section-title { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300; margin-top: .5rem; margin-bottom: 2.5rem; }
   .section-title em { font-style: italic; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .container { max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); }
   section { padding: clamp(5rem, 10vw, 9rem) 0; }
-  #navbar {
-    position: fixed; top: 0; left: 0; right: 0;
-    height: var(--nav-h); z-index: 1000;
-    transition: background .4s var(--ease), backdrop-filter .4s, box-shadow .4s;
-  }
-  #navbar.scrolled {
-    background: color-mix(in srgb, var(--bg) 80%, transparent);
-    backdrop-filter: blur(20px) saturate(180%);
-    box-shadow: 0 1px 0 var(--border);
-  }
-  .nav-inner {
-    max-width: 1120px; margin: 0 auto;
-    padding: 0 clamp(1.25rem, 4vw, 3rem);
-    height: 100%; display: flex; align-items: center; justify-content: space-between;
-  }
+  #navbar { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); z-index: 1000; transition: background .4s var(--ease), backdrop-filter .4s, box-shadow .4s; }
+  #navbar.scrolled { background: color-mix(in srgb, var(--bg) 80%, transparent); backdrop-filter: blur(20px) saturate(180%); box-shadow: 0 1px 0 var(--border); }
+  .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); height: 100%; display: flex; align-items: center; justify-content: space-between; }
   .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .nav-links { display: flex; align-items: center; gap: 2.5rem; }
-  .nav-links a { font-family: 'Syne', sans-serif; font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); transition: color .25s; position: relative; }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a { font-family: 'Syne', sans-serif; font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); transition: color .25s; position: relative; }
   .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--amber); transition: width .3s var(--ease); }
   .nav-links a:hover { color: var(--heading); }
   .nav-links a:hover::after { width: 100%; }
@@ -115,9 +89,7 @@
   .hero-actions { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .9s var(--ease) .9s forwards; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   .btn-primary { display: inline-flex; align-items: center; gap: .5rem; background: var(--grad); color: #fff; font-family: 'Syne', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .9rem 2rem; border-radius: 999px; border: none; cursor: pointer; transition: transform .25s var(--ease), box-shadow .25s; position: relative; overflow: hidden; }
-  .btn-primary::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,.15); opacity: 0; transition: opacity .2s; }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px #F9731640; }
-  .btn-primary:hover::before { opacity: 1; }
   .btn-outline { display: inline-flex; align-items: center; gap: .5rem; background: transparent; color: var(--text); font-family: 'Syne', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .9rem 2rem; border-radius: 999px; border: 1px solid var(--border); cursor: pointer; transition: border-color .25s, color .25s, transform .25s var(--ease); }
   .btn-outline:hover { border-color: var(--amber); color: var(--amber); transform: translateY(-2px); }
   .scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: .5rem; color: var(--muted); font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; animation: fadeUp 1s var(--ease) 1.5s both; }
@@ -168,13 +140,24 @@
   .timeline::before { content: ''; position: absolute; top: 0; left: 0; width: 1px; height: 100%; background: linear-gradient(to bottom, var(--amber), var(--rose), transparent); }
   .timeline-item { position: relative; margin-bottom: 3rem; padding-left: 2rem; }
   .timeline-item:last-child { margin-bottom: 0; }
-  .timeline-dot { position: absolute; left: -2rem; top: .4rem; width: 12px; height: 12px; background: var(--grad); border-radius: 50%; transform: translateX(-5.5px); box-shadow: 0 0 0 4px var(--bg2), 0 0 0 6px var(--amber); transition: box-shadow .3s; }
+  .timeline-dot { position: absolute; left: -2rem; top: .4rem; width: 12px; height: 12px; background: var(--grad); border-radius: 50%; transform: translateX(-5.5px); box-shadow: 0 0 0 4px var(--bg2), 0 0 0 6px rgba(249,115,22,0.3); transition: box-shadow .3s; }
+  .timeline-item:hover .timeline-dot { box-shadow: 0 0 0 4px var(--bg2), 0 0 0 10px rgba(249,115,22,0.2); }
   .timeline-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: .75rem; flex-wrap: wrap; }
   .timeline-period { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: 'Syne', sans-serif; font-weight: 700; }
   .timeline-type { font-size: .68rem; color: var(--muted); background: var(--bg3); padding: .2rem .6rem; border-radius: 999px; border: 1px solid var(--border); }
   .timeline-role { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--heading); margin-bottom: .2rem; }
   .timeline-company { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--muted); margin-bottom: .75rem; }
   .timeline-desc { font-size: .85rem; color: var(--muted); line-height: 1.75; max-width: 620px; }
+  /* TOOLS */
+  #tools { background: var(--bg); }
+  .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  .tool-group { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 1.75rem; backdrop-filter: blur(12px); transition: transform .3s var(--ease), border-color .3s, box-shadow .3s; }
+  .tool-group:hover { transform: translateY(-4px); border-color: var(--amber); box-shadow: 0 20px 60px #00000020; }
+  .tool-group-title { font-family: 'Syne', sans-serif; font-size: .95rem; font-weight: 700; color: var(--heading); margin-bottom: 1.25rem; }
+  .tool-pills { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .tool-pill-item { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; background: var(--bg3); color: var(--muted); padding: .3rem .75rem; border-radius: 999px; border: 1px solid var(--border); transition: background .2s, color .2s; }
+  .tool-group:hover .tool-pill-item { background: var(--amber); color: #fff; border-color: var(--amber); }
+  /* CONTACT */
   .contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(3rem, 6vw, 6rem); align-items: start; }
   .contact-info p { color: var(--muted); line-height: 1.8; margin-top: 1rem; font-size: .9rem; }
   .contact-socials { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
@@ -184,7 +167,7 @@
   .form-group { margin-bottom: 1.25rem; }
   .form-label { display: block; font-family: 'Syne', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: .6rem; }
   .form-input, .form-textarea { width: 100%; background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: .9rem 1.1rem; font-family: 'DM Mono', monospace; font-size: .85rem; color: var(--text); outline: none; transition: border-color .25s, box-shadow .25s; -webkit-appearance: none; }
-  .form-input:focus, .form-textarea:focus { border-color: var(--amber); box-shadow: 0 0 0 3px var(--amber); }
+  .form-input:focus, .form-textarea:focus { border-color: var(--amber); box-shadow: 0 0 0 3px rgba(249,115,22,0.2); }
   .form-textarea { height: 140px; resize: vertical; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   footer { padding: 2.5rem 0; border-top: 1px solid var(--border); }
@@ -207,6 +190,7 @@
     .about-stats { grid-template-columns: repeat(2, 1fr); }
     .projects-grid { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -220,6 +204,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#tools">Tools</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><button class="theme-btn" id="themeToggle" aria-label="Toggle theme"></button></li>
     </ul>
@@ -237,9 +222,11 @@
   <a href="#skills" class="mob-link">Skills</a>
   <a href="#projects" class="mob-link">Projects</a>
   <a href="#experience" class="mob-link">Experience</a>
+  <a href="#tools" class="mob-link">Tools</a>
   <a href="#contact" class="mob-link">Contact</a>
 </div>
 
+<!-- HERO -->
 <section id="hero">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
@@ -252,7 +239,7 @@
     <h1 class="hero-name">
       Michael Angelo<br /><span class="accent">San Pascual</span>
     </h1>
-    <p style="font-family:'Syne',sans-serif; font-size:.85rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-top:1rem; opacity:0; animation:fadeUp .9s var(--ease) .65s forwards;">
+    <p style="font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:1rem;opacity:0;animation:fadeUp .9s var(--ease) .65s forwards;">
       Virtual Assistant &nbsp;/&nbsp; Graphic Designer
     </p>
     <p class="hero-sub">
@@ -272,45 +259,25 @@
 
 <div class="divider"></div>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="container">
     <div class="about-grid">
-
-      <!-- ✅ REAL PHOTO -->
       <div class="about-image-wrap reveal">
-        <div class="about-img-placeholder" style="padding:0; overflow:hidden;">
-          <img src="1.png" alt="Michael Angelo San Pascual" style="width:100%; height:100%; object-fit:cover; border-radius:26px;" />
+        <div class="about-img-placeholder" style="padding:0;overflow:hidden;">
+          <img src="1.png" alt="Michael Angelo San Pascual" style="width:100%;height:100%;object-fit:cover;border-radius:26px;" />
         </div>
         <div class="about-badge">✦ Available for Work</div>
       </div>
-
       <div class="about-text">
         <span class="label reveal">About Me</span>
-        <h2 class="section-title reveal reveal-delay-1">
-          I get things<br />done <em>beautifully.</em>
-        </h2>
-        <p class="reveal reveal-delay-2">
-          Hey, I'm Michael Angelo San Pascual — a Virtual Assistant and Graphic Designer
-          with a passion for helping businesses run smoother and look better.
-        </p>
-        <p class="reveal reveal-delay-3">
-          I combine sharp organisational skills with a strong design eye — from managing
-          schedules, emails and data, to creating visuals that communicate and convert.
-          I believe great support and great design go hand in hand.
-        </p>
+        <h2 class="section-title reveal reveal-delay-1">I get things<br />done <em>beautifully.</em></h2>
+        <p class="reveal reveal-delay-2">Hey, I'm Michael Angelo San Pascual — a Virtual Assistant and Graphic Designer with a passion for helping businesses run smoother and look better.</p>
+        <p class="reveal reveal-delay-3">I combine sharp organisational skills with a strong design eye — from managing schedules, emails and data, to creating visuals that communicate and convert. I believe great support and great design go hand in hand.</p>
         <div class="about-stats reveal reveal-delay-4">
-          <div>
-            <div class="stat-num">50+</div>
-            <div class="stat-label">Projects</div>
-          </div>
-          <div>
-            <div class="stat-num">30+</div>
-            <div class="stat-label">Clients</div>
-          </div>
-          <div>
-            <div class="stat-num">5+</div>
-            <div class="stat-label">Years</div>
-          </div>
+          <div><div class="stat-num">50+</div><div class="stat-label">Projects</div></div>
+          <div><div class="stat-num">30+</div><div class="stat-label">Clients</div></div>
+          <div><div class="stat-num">5+</div><div class="stat-label">Years</div></div>
         </div>
       </div>
     </div>
@@ -319,6 +286,7 @@
 
 <div class="divider"></div>
 
+<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <span class="label reveal">What I Do</span>
@@ -326,46 +294,34 @@
     <div class="skills-grid">
       <div class="skill-card reveal reveal-delay-1">
         <span class="skill-icon">🎨</span>
-        <div class="skill-name">UI / UX Design</div>
+        <div class="skill-name">Graphic Design</div>
         <div class="skill-tags">
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">Prototyping</span>
-          <span class="skill-tag">Design Systems</span>
-          <span class="skill-tag">Motion</span>
-          <span class="skill-tag">User Research</span>
+          <span class="skill-tag">Canva</span><span class="skill-tag">Photoshop</span>
+          <span class="skill-tag">Illustrator</span><span class="skill-tag">Figma</span><span class="skill-tag">CapCut</span>
         </div>
       </div>
       <div class="skill-card reveal reveal-delay-2">
-        <span class="skill-icon">⚡</span>
-        <div class="skill-name">Frontend Development</div>
+        <span class="skill-icon">🤖</span>
+        <div class="skill-name">Automation & CRM</div>
         <div class="skill-tags">
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">CSS / Tailwind</span>
-          <span class="skill-tag">Framer Motion</span>
+          <span class="skill-tag">Zapier</span><span class="skill-tag">GoHighLevel</span>
+          <span class="skill-tag">n8n</span><span class="skill-tag">Zendesk</span>
         </div>
       </div>
       <div class="skill-card reveal reveal-delay-3">
-        <span class="skill-icon">🛠</span>
-        <div class="skill-name">Backend & APIs</div>
+        <span class="skill-icon">📋</span>
+        <div class="skill-name">Virtual Assistance</div>
         <div class="skill-tags">
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">REST</span>
-          <span class="skill-tag">GraphQL</span>
-          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Data Entry</span><span class="skill-tag">Lead Generation</span>
+          <span class="skill-tag">Email Management</span><span class="skill-tag">Scheduling</span>
         </div>
       </div>
       <div class="skill-card reveal reveal-delay-4">
-        <span class="skill-icon">☁️</span>
-        <div class="skill-name">DevOps & Cloud</div>
+        <span class="skill-icon">📱</span>
+        <div class="skill-name">Content Creation</div>
         <div class="skill-tags">
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">CI/CD</span>
-          <span class="skill-tag">Vercel</span>
-          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Social Media</span><span class="skill-tag">Copywriting</span>
+          <span class="skill-tag">Video Editing</span><span class="skill-tag">Branding</span>
         </div>
       </div>
     </div>
@@ -374,6 +330,7 @@
 
 <div class="divider"></div>
 
+<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <span class="label reveal">Selected Work</span>
@@ -421,64 +378,144 @@
 
 <div class="divider"></div>
 
+<!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
     <span class="label reveal">Career</span>
     <h2 class="section-title reveal reveal-delay-1">Work <em>Experience</em></h2>
     <div class="timeline">
+
       <div class="timeline-item reveal">
         <div class="timeline-dot"></div>
-        <div class="timeline-meta"><span class="timeline-period">2021 — 2026</span><span class="timeline-type">Full-Time</span></div>
-        <div class="timeline-role">Team Leader</div>
+        <div class="timeline-meta">
+          <span class="timeline-period">Aug 2021 — Feb 2026</span>
+          <span class="timeline-type">Full-Time</span>
+        </div>
+        <div class="timeline-role">Team Leader — Content Moderation / Fintech</div>
         <div class="timeline-company">Acquire Intelligence</div>
-        <p class="timeline-desc">Led operations and mentored a team of up to 20 Customer Experience Specialists. Managed real-time escalations, coordinated cross-functional resolutions, and implemented targeted coaching to drive SLAs and key metrics like CSAT and AHT. Streamlined customer interactions and workflows utilizing Zendesk.</p>
+        <p class="timeline-desc">Led and motivated a team of Customer Experience Specialists, overseeing performance management, disciplinary actions, and career development. Monitored SLAs and KPIs to drive team accountability and operational efficiency. Provided real-time floor support including escalation handling, facilitated cross-functional coordination with IT, HR, and Workforce Management. Conducted performance reviews, coaching, and PIPs. Represented the team in client meetings and calibration sessions. Utilized Zendesk to manage customer workflows.</p>
       </div>
+
       <div class="timeline-item reveal reveal-delay-1">
         <div class="timeline-dot"></div>
-        <div class="timeline-meta"><span class="timeline-period">2020 — 2021</span><span class="timeline-type">Full-Time</span></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">Aug 2020 — Aug 2021</span>
+          <span class="timeline-type">Full-Time</span>
+        </div>
         <div class="timeline-role">Content Moderator</div>
         <div class="timeline-company">Acquire Intelligence</div>
-        <p class="timeline-desc">Directed content moderation and user safety operations across a gaming platform. Handled high-volume user-generated content, enforced community guidelines, and partnered with technical teams to resolve live platform issues. Maintained a secure, compliant, and positive player environment.</p>
+        <p class="timeline-desc">Oversaw conversations to ensure compliance with community rules on a game platform. Managed user-generated content, maintained a positive and safe community environment, handled large volumes of user interactions, and collaborated with teams to address technical issues and customer concerns.</p>
       </div>
+
       <div class="timeline-item reveal reveal-delay-2">
         <div class="timeline-dot"></div>
-        <div class="timeline-meta"><span class="timeline-period">2019 — 2020</span><span class="timeline-type">Contract</span></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">Jan 2019 — Aug 2020</span>
+          <span class="timeline-type">Freelance</span>
+        </div>
         <div class="timeline-role">Graphic Designer</div>
-        <div class="timeline-company">Freelance / Self-Employed</div>
-        <p class="timeline-desc">Partnered with clients to translate project visions into brand-aligned graphic designs using Adobe Creative Suite. Managed end-to-end creative workflows, from initial consultation and draft presentations to iterative feedback loops and final delivery.</p>
+        <div class="timeline-company">Self-Employed</div>
+        <p class="timeline-desc">Collaborated with clients to understand their vision and delivered design solutions across various projects. Presented drafts, incorporated client feedback, and ensured all designs aligned with brand guidelines. Utilized Adobe Creative Suite including Illustrator and Photoshop.</p>
       </div>
+
       <div class="timeline-item reveal reveal-delay-3">
         <div class="timeline-dot"></div>
-        <div class="timeline-meta"><span class="timeline-period">2018 — 2019</span><span class="timeline-type">Internship</span></div>
-        <div class="timeline-role">Junior Web Developer</div>
-        <div class="timeline-company">Nova Tech Labs</div>
-        <p class="timeline-desc">First professional role — implemented pixel-perfect UI from Figma specs, participated in daily standups, and shipped features for an internal HR tool used company-wide.</p>
+        <div class="timeline-meta">
+          <span class="timeline-period">Feb 2017 — Jan 2019</span>
+          <span class="timeline-type">Full-Time</span>
+        </div>
+        <div class="timeline-role">Technical Support Representative — Tier 2</div>
+        <div class="timeline-company">Reimage Philippines</div>
+        <p class="timeline-desc">Provided technical support to customers across multiple time zones. Troubleshot and resolved a variety of technical issues, performed malware and ransomware removal, installed and configured operating systems and applications, and explained technical solutions clearly to restore service.</p>
       </div>
+
+      <div class="timeline-item reveal reveal-delay-4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-period">Oct 2015 — Feb 2017</span>
+          <span class="timeline-type">Full-Time</span>
+        </div>
+        <div class="timeline-role">Remote Desktop Support Specialist / Hive Lead</div>
+        <div class="timeline-company">Accenture</div>
+        <p class="timeline-desc">Provided remote technical support, eliminated malware and threats from computer systems, and troubleshot hardware, software, and network issues. Configured and tested new software and hardware, managed escalated customer issues, and distributed EOS reports.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
+<!-- TOOLS I USE -->
+<section id="tools">
+  <div class="container">
+    <span class="label reveal">My Toolkit</span>
+    <h2 class="section-title reveal reveal-delay-1">Tools I <em>Use</em></h2>
+    <div class="tools-grid">
+
+      <div class="tool-group reveal reveal-delay-1">
+        <div class="tool-group-title">🎨 Design</div>
+        <div class="tool-pills">
+          <span class="tool-pill-item">Canva</span>
+          <span class="tool-pill-item">Adobe Photoshop</span>
+          <span class="tool-pill-item">Adobe Illustrator</span>
+          <span class="tool-pill-item">Figma</span>
+          <span class="tool-pill-item">CapCut</span>
+        </div>
+      </div>
+
+      <div class="tool-group reveal reveal-delay-2">
+        <div class="tool-group-title">🤖 Automation & CRM</div>
+        <div class="tool-pills">
+          <span class="tool-pill-item">Zapier</span>
+          <span class="tool-pill-item">GoHighLevel</span>
+          <span class="tool-pill-item">n8n</span>
+          <span class="tool-pill-item">Zendesk</span>
+          <span class="tool-pill-item">HubSpot</span>
+        </div>
+      </div>
+
+      <div class="tool-group reveal reveal-delay-3">
+        <div class="tool-group-title">📋 Productivity & Admin</div>
+        <div class="tool-pills">
+          <span class="tool-pill-item">Google Workspace</span>
+          <span class="tool-pill-item">Microsoft Office</span>
+          <span class="tool-pill-item">Notion</span>
+          <span class="tool-pill-item">Trello</span>
+          <span class="tool-pill-item">Slack</span>
+        </div>
+      </div>
+
+      <div class="tool-group reveal reveal-delay-4">
+        <div class="tool-group-title">🌐 Social & Content</div>
+        <div class="tool-pills">
+          <span class="tool-pill-item">Meta Business Suite</span>
+          <span class="tool-pill-item">Buffer</span>
+          <span class="tool-pill-item">Hootsuite</span>
+          <span class="tool-pill-item">ChatGPT</span>
+          <span class="tool-pill-item">Claude AI</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="contact-wrapper">
       <div class="contact-info">
         <span class="label reveal">Get In Touch</span>
-        <h2 class="section-title reveal reveal-delay-1">
-          Let's build<br />something <em>great.</em>
-        </h2>
-        <p class="reveal reveal-delay-2">
-          I'm open to new freelance projects, full-time roles, and creative collaborations.
-          Drop me a message and I'll get back to you within 24 hours.
-        </p>
-        <!-- ✅ ONLY Email and LinkedIn -->
+        <h2 class="section-title reveal reveal-delay-1">Let's build<br />something <em>great.</em></h2>
+        <p class="reveal reveal-delay-2">I'm open to new freelance projects, full-time roles, and creative collaborations. Drop me a message and I'll get back to you within 24 hours.</p>
         <div class="contact-socials reveal reveal-delay-3">
           <a href="mailto:magspj26@gmail.com" class="social-btn">✉ Email</a>
           <a href="https://www.linkedin.com/in/michaelangelosanpascual" target="_blank" class="social-btn">in LinkedIn</a>
         </div>
       </div>
-
       <div class="contact-form reveal reveal-delay-2">
         <form id="contactForm" action="https://formspree.io/f/xpqyrwgb" method="POST">
           <div class="form-row">
@@ -503,14 +540,12 @@
             <label class="form-label" for="message">Message</label>
             <textarea class="form-textarea" id="message" name="message" placeholder="Tell me about your project..." required></textarea>
           </div>
-          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;" id="submitBtn">
-            Send Message ✦
-          </button>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;" id="submitBtn">Send Message ✦</button>
         </form>
-        <div id="formSuccess" style="display:none; text-align:center; padding:2rem 0;">
-          <div style="font-size:2.5rem; margin-bottom:1rem;">✅</div>
-          <div style="font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:var(--heading); margin-bottom:.5rem;">Message Sent!</div>
-          <div style="font-size:.85rem; color:var(--muted);">Thanks for reaching out — I'll get back to you within 24 hours.</div>
+        <div id="formSuccess" style="display:none;text-align:center;padding:2rem 0;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">✅</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--heading);margin-bottom:.5rem;">Message Sent!</div>
+          <div style="font-size:.85rem;color:var(--muted);">Thanks for reaching out — I'll get back to you within 24 hours.</div>
         </div>
       </div>
     </div>
@@ -531,7 +566,8 @@
   applyTheme(localStorage.getItem('theme') || 'dark');
   toggles.forEach(btn => { btn.addEventListener('click', () => { applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'); }); });
   function checkMobileToggle() { const m = document.getElementById('themeToggleMobile'); m.style.display = window.innerWidth <= 768 ? 'block' : 'none'; }
-  checkMobileToggle(); window.addEventListener('resize', checkMobileToggle);
+  checkMobileToggle();
+  window.addEventListener('resize', checkMobileToggle);
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
   const hamburger = document.getElementById('hamburger');
