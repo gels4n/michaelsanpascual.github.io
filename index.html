@@ -175,6 +175,14 @@
   .timeline-role { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--heading); margin-bottom: .2rem; }
   .timeline-company { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--muted); margin-bottom: .75rem; }
   .timeline-desc { font-size: .85rem; color: var(--muted); line-height: 1.75; max-width: 620px; }
+  /* ── TOOLS ──────────────────────────────────────────── */
+  .tools-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  .tool-group { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 1.75rem; backdrop-filter: blur(12px); transition: transform .3s var(--ease), border-color .3s, box-shadow .3s; }
+  .tool-group:hover { transform: translateY(-4px); border-color: var(--amber); box-shadow: 0 20px 60px #00000020; }
+  .tool-group-title { font-family: 'Syne', sans-serif; font-size: .95rem; font-weight: 700; color: var(--heading); margin-bottom: 1.25rem; }
+  .tool-pills { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .tool-pill-item { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; background: var(--bg3); color: var(--muted); padding: .3rem .75rem; border-radius: 999px; border: 1px solid var(--border); transition: background .2s, color .2s, border-color .2s; }
+  .tool-group:hover .tool-pill-item { background: var(--amber); color: #fff; border-color: var(--amber); }
   .contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(3rem, 6vw, 6rem); align-items: start; }
   .contact-info p { color: var(--muted); line-height: 1.8; margin-top: 1rem; font-size: .9rem; }
   .contact-socials { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
@@ -220,6 +228,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#tools">Tools</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><button class="theme-btn" id="themeToggle" aria-label="Toggle theme"></button></li>
     </ul>
@@ -237,6 +246,7 @@
   <a href="#skills" class="mob-link">Skills</a>
   <a href="#projects" class="mob-link">Projects</a>
   <a href="#experience" class="mob-link">Experience</a>
+  <a href="#tools" class="mob-link">Tools</a>
   <a href="#contact" class="mob-link">Contact</a>
 </div>
 
@@ -426,34 +436,104 @@
     <span class="label reveal">Career</span>
     <h2 class="section-title reveal reveal-delay-1">Work <em>Experience</em></h2>
     <div class="timeline">
+
       <div class="timeline-item reveal">
         <div class="timeline-dot"></div>
-        <div class="timeline-meta"><span class="timeline-period">2022 — Present</span><span class="timeline-type">Full-Time</span></div>
-        <div class="timeline-role">Senior Frontend Engineer</div>
-        <div class="timeline-company">Veritas Digital Studio</div>
-        <p class="timeline-desc">Lead UI architecture for SaaS products serving 200k+ users. Defined component systems, introduced performance budgets, and mentored a team of 6 engineers. Reduced LCP by 40%.</p>
+        <div class="timeline-meta"><span class="timeline-period">Aug 2021 — Feb 2026</span><span class="timeline-type">Full-Time</span></div>
+        <div class="timeline-role">Team Leader — Content Moderation / Fintech</div>
+        <div class="timeline-company">Acquire Intelligence</div>
+        <p class="timeline-desc">Led and motivated a team of Customer Experience Specialists, overseeing performance management, disciplinary actions, and career development. Monitored SLAs and KPIs to drive team accountability and operational efficiency. Provided real-time floor support including escalation handling, and facilitated cross-functional coordination with IT, HR, and Workforce Management. Conducted performance reviews, coaching, and PIPs. Represented the team in client meetings, calibration sessions, and utilized Zendesk to manage customer workflows.</p>
       </div>
+
       <div class="timeline-item reveal reveal-delay-1">
         <div class="timeline-dot"></div>
-        <div class="timeline-meta"><span class="timeline-period">2020 — 2022</span><span class="timeline-type">Full-Time</span></div>
-        <div class="timeline-role">UI/UX Designer & Developer</div>
-        <div class="timeline-company">Luminary Agency</div>
-        <p class="timeline-desc">Designed and shipped end-to-end digital products for clients in fintech, healthcare and SaaS. Owned the design system and collaborated daily with product and engineering teams.</p>
+        <div class="timeline-meta"><span class="timeline-period">Aug 2020 — Aug 2021</span><span class="timeline-type">Full-Time</span></div>
+        <div class="timeline-role">Content Moderator</div>
+        <div class="timeline-company">Acquire Intelligence</div>
+        <p class="timeline-desc">Oversaw conversations to ensure compliance with community rules on a game platform. Managed user-generated content, maintained a positive and safe community, handled large volumes of user interactions, and collaborated with teams to address technical issues and provide feedback on customer concerns.</p>
       </div>
+
       <div class="timeline-item reveal reveal-delay-2">
         <div class="timeline-dot"></div>
-        <div class="timeline-meta"><span class="timeline-period">2019 — 2020</span><span class="timeline-type">Contract</span></div>
-        <div class="timeline-role">Full-Stack Developer</div>
-        <div class="timeline-company">Freelance / Self-Employed</div>
-        <p class="timeline-desc">Built and launched 15+ client websites and web apps. Developed deep expertise in React, Node.js and modern deployment workflows while managing projects end-to-end.</p>
+        <div class="timeline-meta"><span class="timeline-period">Jan 2019 — Aug 2020</span><span class="timeline-type">Freelance</span></div>
+        <div class="timeline-role">Graphic Designer</div>
+        <div class="timeline-company">Self-Employed</div>
+        <p class="timeline-desc">Collaborated with clients to understand their vision and delivered design solutions across various projects. Presented drafts, incorporated feedback, and ensured all designs aligned with client brand guidelines. Utilized Adobe Creative Suite including Illustrator and Photoshop.</p>
       </div>
+
       <div class="timeline-item reveal reveal-delay-3">
         <div class="timeline-dot"></div>
-        <div class="timeline-meta"><span class="timeline-period">2018 — 2019</span><span class="timeline-type">Internship</span></div>
-        <div class="timeline-role">Junior Web Developer</div>
-        <div class="timeline-company">Nova Tech Labs</div>
-        <p class="timeline-desc">First professional role — implemented pixel-perfect UI from Figma specs, participated in daily standups, and shipped features for an internal HR tool used company-wide.</p>
+        <div class="timeline-meta"><span class="timeline-period">Feb 2017 — Jan 2019</span><span class="timeline-type">Full-Time</span></div>
+        <div class="timeline-role">Technical Support Representative — Tier 2</div>
+        <div class="timeline-company">Reimage Philippines</div>
+        <p class="timeline-desc">Provided technical support to customers across multiple time zones. Troubleshot and resolved technical issues, performed malware and ransomware removal, installed and configured operating systems and applications, and explained technical solutions clearly to restore service.</p>
       </div>
+
+      <div class="timeline-item reveal reveal-delay-4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta"><span class="timeline-period">Oct 2015 — Feb 2017</span><span class="timeline-type">Full-Time</span></div>
+        <div class="timeline-role">Remote Desktop Support Specialist / Hive Lead</div>
+        <div class="timeline-company">Accenture</div>
+        <p class="timeline-desc">Provided remote technical support, eliminated malware and threats from computer systems, troubleshot hardware, software, and network issues. Configured and tested new software and hardware, managed escalated customer issues, and distributed EOS reports.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── TOOLS ─────────────────────────────────────────────── -->
+<section id="tools">
+  <div class="container">
+    <span class="label reveal">My Toolkit</span>
+    <h2 class="section-title reveal reveal-delay-1">Tools I <em>Use</em></h2>
+    <div class="tools-layout">
+
+      <div class="tool-group reveal reveal-delay-1">
+        <div class="tool-group-title">🎨 Design</div>
+        <div class="tool-pills">
+          <span class="tool-pill-item">Canva</span>
+          <span class="tool-pill-item">Adobe Photoshop</span>
+          <span class="tool-pill-item">Adobe Illustrator</span>
+          <span class="tool-pill-item">Figma</span>
+          <span class="tool-pill-item">Capcut</span>
+        </div>
+      </div>
+
+      <div class="tool-group reveal reveal-delay-2">
+        <div class="tool-group-title">🤖 Automation & CRM</div>
+        <div class="tool-pills">
+          <span class="tool-pill-item">Zapier</span>
+          <span class="tool-pill-item">GoHighLevel</span>
+          <span class="tool-pill-item">n8n</span>
+          <span class="tool-pill-item">Zendesk</span>
+          <span class="tool-pill-item">HubSpot</span>
+        </div>
+      </div>
+
+      <div class="tool-group reveal reveal-delay-3">
+        <div class="tool-group-title">📋 Productivity & Admin</div>
+        <div class="tool-pills">
+          <span class="tool-pill-item">Google Workspace</span>
+          <span class="tool-pill-item">Microsoft Office</span>
+          <span class="tool-pill-item">Notion</span>
+          <span class="tool-pill-item">Trello</span>
+          <span class="tool-pill-item">Slack</span>
+        </div>
+      </div>
+
+      <div class="tool-group reveal reveal-delay-4">
+        <div class="tool-group-title">🌐 Social & Content</div>
+        <div class="tool-pills">
+          <span class="tool-pill-item">Meta Business Suite</span>
+          <span class="tool-pill-item">Buffer</span>
+          <span class="tool-pill-item">Hootsuite</span>
+          <span class="tool-pill-item">ChatGPT</span>
+          <span class="tool-pill-item">Claude AI</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -474,7 +554,7 @@
         </p>
         <!-- ✅ ONLY Email and LinkedIn -->
         <div class="contact-socials reveal reveal-delay-3">
-          <a href="mailto:magspj26@gmail.com" class="social-btn">✉ Email</a>
+          <a href="/cdn-cgi/l/email-protection#2845494f5b58421a1e684f45494144064b4745" class="social-btn">✉ Email</a>
           <a href="https://www.linkedin.com/in/michaelangelosanpascual" target="_blank" class="social-btn">in LinkedIn</a>
         </div>
       </div>
@@ -524,7 +604,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const html = document.documentElement;
   const toggles = document.querySelectorAll('#themeToggle, #themeToggleMobile');
   function applyTheme(t) { html.setAttribute('data-theme', t); localStorage.setItem('theme', t); }
@@ -552,9 +632,4 @@
         const response = await fetch(contactForm.action, { method: 'POST', body: new FormData(contactForm), headers: { 'Accept': 'application/json' } });
         if (response.ok) { contactForm.style.display = 'none'; formSuccess.style.display = 'block'; }
         else { submitBtn.innerHTML = 'Something went wrong. Try again.'; submitBtn.style.opacity = '1'; submitBtn.style.pointerEvents = 'auto'; }
-      } catch (err) { submitBtn.innerHTML = 'Network error. Try again.'; submitBtn.style.opacity = '1'; submitBtn.style.pointerEvents = 'auto'; }
-    });
-  }
-</script>
-</body>
-</html>
+      } catch (err) { submitBtn.inn
